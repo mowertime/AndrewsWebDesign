@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Andrews Web Design</title>
+    <meta name="description" content="Contact Andrews Web Design about a new website or redesign for your local business." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Andrews Web Design home">
+          <span class="brand-mark"><img src="colored-logo.png" alt="Andrews Web Design logo" /></span>
+          <span>Andrews Web Design</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Toggle menu</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="portfolio/index.html" class="nav-link">Portfolio</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+          <a href="tel:+13183327871" class="phone-link nav-phone">Call +1 (318) 332-7871</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-banner">
+        <div class="container page-banner-inner">
+          <div>
+            <p class="page-kicker">Get in touch</p>
+            <h1>Let’s talk about the right website for your business.</h1>
+          </div>
+          <p class="page-summary">Whether you need a simple refresh or a fully custom site, the conversation starts with understanding what your business needs to look like and how it should work.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-grid">
+          <div class="contact-card">
+            <p class="eyebrow">Start a conversation</p>
+            <h2>Tell me a little about your business.</h2>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="b6927f1e-9a2e-4fb3-8092-24492055baa0" />
+              <input type="hidden" name="subject" value="New Andrews Web Design inquiry" />
+              <input type="hidden" name="from_name" value="Andrews Web Design website" />
+              <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" />
+              <div class="contact-field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" />
+              </div>
+              <div class="contact-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div class="contact-field">
+                <label for="company">Business</label>
+                <input id="company" name="company" type="text" placeholder="Business name" />
+              </div>
+              <div class="contact-field">
+                <label for="message">Project details</label>
+                <textarea id="message" name="message" placeholder="Tell me what you need, what you want to improve, and any timeline or goals you have in mind."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send inquiry</button>
+            </form>
+          </div>
+
+          <aside class="info-card">
+            <p class="eyebrow">Contact details</p>
+            <h2>Reach out directly</h2>
+            <ul class="info-list">
+              <li><strong>Phone</strong><a href="tel:+13183327871">+1 (318) 332-7871</a></li>
+              <li><strong>Location</strong>Serving Natchitoches, LA and surrounding local businesses</li>
+              <li><strong>Best for</strong>Small businesses, service brands, restaurants, and local shops</li>
+            </ul>
+            <p class="mini-note">I can help with redesigns, new build projects, refreshes, and local business branding support.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <div>
+          <p>© <span data-year></span> Andrews Web Design</p>
+          <p>Serving local small businesses throughout Natchitoches, LA.</p>
+        </div>
+        <div class="footer-links" aria-label="Contact links">
+          <a href="tel:+13183327871">Call +1 (318) 332-7871</a>
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

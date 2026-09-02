@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Olivier WoodWorks</title>
+  <meta name="description" content="Visit or contact Olivier WoodWorks in Natchitoches, Louisiana — handcrafted cypress furniture made to order since 1965.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="announce">
+    <strong>Est. 1965</strong> &nbsp;·&nbsp; Handcrafted cypress furniture &nbsp;·&nbsp; Natchitoches, Louisiana
+  </div>
+
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img class="logo-img" src="assets/img/site/logo.png" alt="Olivier WoodWorks">
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a class="nav-cta" href="shop.html">Browse the Shop</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="about.html">Our Story</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <div class="mobile-menu-foot">
+      117 Second Street, Natchitoches, LA<br>
+      <strong>(318) 352-1427</strong>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow reveal">Contact &amp; visiting</span>
+        <h1 class="reveal" data-delay="1">Come by the shop, or drop us a line.</h1>
+        <p class="reveal" data-delay="2">We're a few blocks off Front Street, where the wood is sawed, the lathes turn, and the furniture is made. Stop in to see the pieces in person — or tell us what you're dreaming up.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <div class="contact-block reveal">
+            <span class="hand">Visit us</span>
+            <h3>Olivier WoodWorks</h3>
+            <p>
+              <a href="https://maps.google.com/?q=117+Second+Street+Natchitoches+LA+71457">117 Second Street<br>Natchitoches, LA 71457</a>
+            </p>
+          </div>
+          <div class="contact-block reveal" data-delay="1">
+            <span class="hand">Call or write</span>
+            <p><a href="tel:+13183521427">(318) 352-1427</a></p>
+            <p>Because we make everything to order, the best first step is a conversation about your piece — the size, the finish, the room it's headed to.</p>
+          </div>
+          <div class="contact-block reveal" data-delay="2">
+            <span class="hand">Good to know</span>
+            <p>We ship nationwide via white-glove delivery. Larger pieces may be picked up in Natchitoches or delivered white-glove at approximately $1.85 per mile from the shop. Finishes are New Orleans Patina, Provincial, or Special Walnut, sealed with General Finishes topcoat.</p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal" data-delay="1">
+          <div class="contact-form-card">
+            <h3>Send an enquiry</h3>
+            <p class="form-intro">Tell us about the piece you have in mind and we'll be in touch to confirm the details, the finish, and the price of your piece.</p>
+            <form id="contactForm" action="#" method="post">
+              <label for="fieldName">Name</label>
+              <input type="text" id="fieldName" name="name" required autocomplete="name">
+
+              <label for="fieldEmail">Email</label>
+              <input type="email" id="fieldEmail" name="email" required autocomplete="email">
+
+              <label for="fieldPhone">Phone <span>(optional)</span></label>
+              <input type="tel" id="fieldPhone" name="phone" autocomplete="tel">
+
+              <label for="fieldPiece">Piece you're interested in</label>
+              <input type="text" id="fieldPiece" name="piece" placeholder="e.g. Louisiana Bayou Bed">
+
+              <label for="fieldMessage">Message</label>
+              <textarea id="fieldMessage" name="message" rows="5" placeholder="Tell us the size, finish, and story behind your piece…"></textarea>
+
+              <button class="btn btn--solid btn--block" type="submit">Send enquiry</button>
+              <p class="form-note">Your enquiry opens your email client — nothing is stored or sent automatically.</p>
+            </form>
+            <div class="form-success" id="formSuccess" style="display:none">
+              <span class="hand" style="font-size:22px">Thank you — that's all set.</span>
+              <p>Your email client should be opening with your enquiry. We'll be in touch soon to talk wood and workmanship.</p>
+              <a class="btn btn--solid" href="shop.html">Keep browsing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper section--tight">
+      <div class="container">
+        <figure class="full-figure reveal">
+          <img src="assets/img/site/contact-workshop.jpg" alt="The Olivier WoodWorks workshop">
+          <figcaption>This is where the magic happens — a few blocks off Front Street, where wood is sawed, lathes turn, and sawdust flies.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><img class="logo-img" src="assets/img/site/logo.png" alt="Olivier WoodWorks"></a>
+          <p>Fine cypress furniture handcrafted in Natchitoches, Louisiana since 1965. Three generations of one family, one material, and the same devotion to doing it right.</p>
+          <p class="footer-note">Three generations. One material. One devotion to doing it right.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#history">Our History</a></li>
+            <li><a href="shop.html">The Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="contact.html">117 Second Street<br>Natchitoches, LA 71457</a></li>
+            <li><a href="tel:+13183521427">(318) 352-1427</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Olivier WoodWorks. All rights reserved.</span>
+        <span>Handcrafted in Natchitoches, Louisiana</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    (function () {
+      var form = document.getElementById("contactForm");
+      if (!form) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var get = function (id) { return (document.getElementById(id) || {}).value || ""; };
+        var subject = "Enquiry — " + (get("fieldPiece") || "Olivier WoodWorks");
+        var body = [
+          "Name: " + get("fieldName"),
+          "Email: " + get("fieldEmail"),
+          "Phone: " + get("fieldPhone"),
+          "Piece: " + get("fieldPiece"),
+          "",
+          get("fieldMessage")
+        ].join("\n");
+        window.location.href = "mailto:info@olivierwoodworks.com?subject=" +
+          encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        form.style.display = "none";
+        var ok = document.getElementById("formSuccess");
+        if (ok) ok.style.display = "block";
+      });
+    })();
+  </script>
+</body>
+</html>
