@@ -291,11 +291,39 @@ h3{font-size:clamp(1.45rem,2.4vw,1.9rem);line-height:1.02}
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
-/* Small */
+/* Mobile — hide convoluting elements, keep image clean */
 @media(max-width:640px){
-  .hero{padding-top:2.2rem}
+  .hero{padding-top:2rem}
   .hero-actions .btn{flex:1 1 100%}
   h1{font-size:clamp(2.4rem,11vw,3.4rem)}
-  .mock-grid{grid-template-columns:1fr 1fr 1fr;gap:.5rem}
-  .mock-tile{height:78px}
+  .lead{font-size:1rem}
+  /* Hero mock: declutter on small screens */
+  .mock-top span:last-child{display:none}
+  .mock-proof{display:none}
+  .mock-cta{display:none!important}
+  .mock-caption{font-size:.78rem;padding:.7rem .9rem}
+  .mock-caption span:last-child{display:none}
+  .mock-grid{grid-template-columns:1fr 1fr;gap:.5rem;padding:.7rem .9rem .9rem}
+  .mock-tile{height:88px}
+  .mock-tile:nth-child(3){display:none}
+  .mock-tile span,.mini-grid div em{display:none}
+  /* Cards: simplify */
+  .mini-stats{display:none}
+  .mini-grid{grid-template-columns:1fr 1fr;gap:.5rem}
+  .mini-grid div:nth-child(3){display:none}
+  .mini-grid div{height:82px}
+  .mini-top span:last-child{display:none}
+  .hero-points{gap:.4rem .8rem;font-size:.78rem}
+  .template-option{padding:.65rem .6rem;font-size:.66rem}
+  .mock-hero{padding:1.2rem .9rem 1rem}
+  .mock-hero h4{font-size:1.55rem}
+  .mini-hero h4{font-size:1.2rem}
+}
+@media(max-width:400px){
+  .mock-grid{grid-template-columns:1fr;gap:.5rem}
+  .mock-tile:nth-child(2){display:none}
+  .mini-grid{grid-template-columns:1fr}
+  .mini-grid div:nth-child(2){display:none}
+  .hero-points{display:none}
+  .section{padding:2.5rem 0}
 }
