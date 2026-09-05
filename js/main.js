@@ -1,71 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const siteNav = document.querySelector('.site-nav');
-  const yearTarget = document.querySelector('[data-year]');
+  const yearEl = document.querySelector('[data-year]');
+
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Active nav — handles /portfolio/northline/index.html etc.
+  document.querySelectorAll('.nav-link').forEach(a => {
+    const href = a.getAttribute('href') || '';
+    const path = location.pathname.replace(/\/index\.html$/, '/');
+    const isHome = href === 'index.html' && (path === '/' || path.endsWith('/AndrewsWebDesign/'));
+    const file = path.split('/').pop() || 'index.html';
+    const norm = href.split('/').pop() || href;
+    const active = isHome || (norm && file === norm) || (href.includes('portfolio') && path.includes('portfolio'));
+    // prefer exact match, but don't force portfolio active on home
+    if (href === 'portfolio/index.html' && !path.includes('portfolio')) a.classList.remove('active');
+    else if (isHome && href === 'index.html') { a.classList.add('active'); a.setAttribute('aria-current','page'); }
+    else if (file === norm && file !== '') { a.classList.add('active'); a.setAttribute('aria-current','page'); }
+  });
+
+  // Mobile nav — click, outside, Escape
+  if (navToggle && siteNav) {
+    const closeNav = () => { siteNav.classList.remove('is-open'); navToggle.setAttribute('aria-expanded','false'); siteNav.setAttribute('aria-hidden','true'); };
+    const openNav = () => { siteNav.classList.add('is-open'); navToggle.setAttribute('aria-expanded','true'); siteNav.setAttribute('aria-hidden','false'); };
+    siteNav.setAttribute('aria-hidden','true');
+    navToggle.addEventListener('click', () => {
+      const willOpen = !siteNav.classList.contains('is-open');
+      if (willOpen) openNav(); else closeNav();
+    });
+    siteNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    document.addEventListener('click', e => {
+      if (!siteNav.contains(e.target) && !navToggle.contains(e.target)) closeNav();
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+  }
+
+  // Template switcher (basic HTML, no scroll)
   const templateOptions = document.querySelectorAll('.template-option');
   const templateScenes = document.querySelectorAll('.template-scene');
-  const projectCards = document.querySelectorAll('.project-card');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  if (yearTarget) {
-    yearTarget.textContent = new Date().getFullYear();
-  }
-
-  if (navLinks.length) {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    navLinks.forEach((link) => {
-      const href = link.getAttribute('href');
-      if (href === currentPage) {
-        link.classList.add('active');
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-      }
-    });
-  }
-
-  if (navToggle && siteNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = siteNav.classList.toggle('is-open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-
-    siteNav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        siteNav.classList.remove('is-open');
-        navToggle.setAttribute('aria-expanded', 'false');
+  if (templateOptions.length && templateScenes.length) {
+    templateOptions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.template;
+        templateOptions.forEach(o => o.classList.toggle('is-active', o === btn));
+        templateScenes.forEach(s => s.classList.toggle('is-active', s.dataset.template === target));
       });
     });
   }
 
-  templateOptions.forEach((button) => {
-    button.addEventListener('click', () => {
-      const targetTemplate = button.dataset.template;
-
-      templateOptions.forEach((option) => {
-        option.classList.toggle('is-active', option === button);
-      });
-
-      templateScenes.forEach((scene) => {
-        scene.classList.toggle('is-active', scene.dataset.template === targetTemplate);
-      });
+  // Project cards — delegated expand, accessible
+  const cardGrid = document.querySelector('.card-grid');
+  if (cardGrid) {
+    cardGrid.addEventListener('click', e => {
+      const card = e.target.closest('.project-card');
+      if (!card) return;
+      cardGrid.querySelectorAll('.project-card').forEach(c => c.classList.toggle('is-expanded', c === card));
     });
-  });
-
-  projectCards.forEach((card) => {
-    const activateCard = () => {
-      projectCards.forEach((item) => {
-        item.classList.toggle('is-expanded', item === card);
-      });
-    };
-
-    card.addEventListener('click', activateCard);
-    card.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        activateCard();
-      }
+    cardGrid.addEventListener('keydown', e => {
+      const card = e.target.closest('.project-card');
+      if (!card) return;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
     });
-  });
+  }
 });

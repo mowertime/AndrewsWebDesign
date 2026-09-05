@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Andrews Web Design</title>
     <meta name="description" content="Contact Andrews Web Design about a new website or redesign for your local business." />
+    <meta name="theme-color" content="#0b0b0c" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -14,14 +15,11 @@
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="brand" href="index.html" aria-label="Andrews Web Design home">
-          <span class="brand-mark"><img src="colored-logo.png" alt="Andrews Web Design logo" /></span>
+          <span class="brand-mark"><img src="colored-logo.png" alt="Andrews Web Design logo" width="112" height="112" /></span>
           <span>Andrews Web Design</span>
         </a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Toggle menu</span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Main navigation">
           <a href="index.html" class="nav-link">Home</a>
@@ -47,31 +45,15 @@
 
       <section class="section">
         <div class="container contact-grid">
-          <div class="contact-card">
-            <p class="eyebrow">Start a conversation</p>
-            <h2>Tell me a little about your business.</h2>
-            <form action="https://formsubmit.co/Willygoat210@gmail.com" method="POST">
-              <input type="hidden" name="_subject" value="New Andrews Web Design inquiry" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" />
-              <div class="contact-field">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" />
-              </div>
-              <div class="contact-field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com" />
-              </div>
-              <div class="contact-field">
-                <label for="company">Business</label>
-                <input id="company" name="company" type="text" placeholder="Business name" />
-              </div>
-              <div class="contact-field">
-                <label for="message">Project details</label>
-                <textarea id="message" name="message" placeholder="Tell me what you need, what you want to improve, and any timeline or goals you have in mind."></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Send inquiry</button>
-            </form>
+          <div class="contact-card contact-card--placeholder">
+            <p class="eyebrow">Direct contact for now</p>
+            <h2>Online enquiries are paused while we upgrade the system.</h2>
+            <p>To keep your information private, the email form is temporarily hidden. Please call — you'll reach a real person in Natchitoches, and we can talk through your project right away.</p>
+            <a href="tel:+13183327871" class="btn btn-primary">Call +1 (318) 332-7871</a>
+            <p class="mini-note" style="margin-top:.6rem">Prefer to write? Mention “website enquiry” when you call and we’ll share the best direct contact for your timeline.</p>
+            <!-- Email form hidden until new system is chosen. Restore by replacing this card with form below.
+            <form action="https://formsubmit.co/REPLACE_WITH_NEW_ENDPOINT" method="POST"> ... </form>
+            -->
           </div>
 
           <aside class="info-card">
